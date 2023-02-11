@@ -1,38 +1,54 @@
+var playerScore = 0
+var computerScore = 0
 
-function computerSelect(){
-const computerSelection = ["rock", "paper", "scissors"]
-return computerSelected = (computerSelection[Math.floor(Math.random()*computerSelection.length)]);}
-function playerSelect(){
-let playerSelected
-console.log (playerSelected = document.getElementById("playerSelection").value);
+document.getElementById("submitButton").onclick = function (computerSelected, playerSelected) {
+  function computerSelect(){
+    let computerSelection = ["rock", "paper", "scissors"]
+    return computerSelected = computerSelection[Math.floor(Math.random()*computerSelection.length)];
+    }
+  computerSelect ();
+  function playerSelect(){
+    return playerSelected = (document.getElementById("playerSelection").value);
+    }
+  playerSelect ();
+
+  if (computerSelected==playerSelected){
+    console.log("DRAW!");
+  }
+
+  else if ((playerSelected == 'rock' && computerSelected == 'scissors') ||
+  (playerSelected == 'scissors' && computerSelected == 'paper') ||
+  (playerSelected == 'paper' && computerSelected == 'rock')){
+    console.log("You Win!")
+    playerScore++;
+    console.log(computerScore);
+    console.log(playerScore);
+  }
+
+  else if ((playerSelected == 'scissors' && computerSelected == 'rock') ||
+  (playerSelected == 'paper' && computerSelected == 'scissors') ||
+  (playerSelected == 'rock' && computerSelected == 'paper')){
+    console.log("You Lose!")
+    computerScore++
+    console.log(computerScore);
+    console.log(playerScore);
+  }
+
+  else (console.log("That's not an answer!!"));
+
+
+  if (computerScore==5){
+    console.log("Computer Wins!!!")
+    computerScore = 0;
+    playerScore = 0;
+  }
+  else if (playerScore==5){
+    console.log("Player Wins!!!")
+    computerScore = 0;
+    playerScore = 0;
+  }
 }
 
 
 
-
-
-
-
-function game(computerSelected, playerSelected) {
-  let playerscore = 0
-  let computerscore = 0
-  for (let i = 0; i < 5; i++)
-    if (computerSelected==playerSelected){
-      console.log("DRAW!");
-    }
-    else if ((playerSelected == 'rock' && computerSelection == 'scissors') ||
-    (playerSelected == 'scissors' && computerSelection == 'paper') ||
-    (playerSelected == 'paper' && computerSelection == 'rock')){
-      console.log("You Win!");
-      playerscore +=1;
-    }
-    else ((playerSelected == 'scissors' && computerSelection == 'rock') ||
-    (playerSelected == 'paper' && computerSelection == 'scissors') ||
-    (playerSelected == 'rock' && computerSelection == 'paper'));{
-      console.log("You Lose!");
-      computerscore +=1;
-    }
-   
-
-}
 
